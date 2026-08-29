@@ -1,0 +1,32 @@
+class Solution {
+public:
+    int findContentChildren(vector<int>& g, vector<int>& s) {
+        
+   // for(int i=0;i<s.size();i++){ // if give vector input then case2,is not correct.why??
+   //     cin>>s[i];
+   // }
+
+   // for (int i = 0; i <g.size(); i++) {
+   //     cin >> g[i];
+   // }
+      sort(g.begin(),g.end());
+
+      sort(s.begin(),s.end());
+
+    int contentChildren=0;
+
+    int cookieIndex=0;
+    
+    while(cookieIndex<s.size() && contentChildren<g.size()){
+      //  if(cookieIndex[i]>= g[i]){
+        if(s[cookieIndex]>=g[contentChildren]){
+           // contentchildren++;
+           contentChildren++;
+        }
+        cookieIndex++;
+        //i++;
+    }
+    return contentChildren;
+
+    }
+};
