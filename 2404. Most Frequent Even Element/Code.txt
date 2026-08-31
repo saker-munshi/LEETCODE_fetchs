@@ -1,0 +1,27 @@
+class Solution {
+public:
+    int mostFrequentEven(vector<int>& nums) {
+        int n=nums.size();
+        sort(nums.begin(),nums.end());
+       int max=0;
+       // int freq=0; no use 
+       int result=-1;
+       unordered_map<int,int> freq;
+
+      for(int i=0;i<n;i++){
+        if(nums[i]%2==0){
+            freq[nums[i]]++;
+
+            if(freq[nums[i]]>max || (freq[nums[i]]==max && nums[i]<result)){
+                max=freq[nums[i]];
+                result=nums[i];
+               // return result;;
+            }
+        }
+        
+      }
+     //  return -1;
+
+     return result;
+    }
+};
