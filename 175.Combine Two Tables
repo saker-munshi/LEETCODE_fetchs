@@ -1,0 +1,11 @@
+# Write your MySQL query statement below
+
+
+#personId  primary key
+#addressId primary key    personId foreign key
+
+
+select firstName,lastName,city,state
+from Person as P
+left join Address as A
+on P.personId = A.personId
