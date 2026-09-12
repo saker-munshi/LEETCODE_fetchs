@@ -1,0 +1,19 @@
+# Write your MySQL query statement below
+
+
+#subject_id,dept_id primary key
+
+
+
+#select teacher_id,count(subject_id) as cnt
+# for unique count use distinct
+
+select teacher_id,count(distinct subject_id) as cnt
+from teacher as t
+group by teacher_id;
+
+# why we use group by here?
+#Think of GROUP BY as the SQL keyword for the phrase "PER" or "FOR EACH".
+# "Count the subjects per teacher"  GROUP BY teacher_id 
+#"Find the average salary per department"  GROUP BY dept_id
+#"Total the sales for each city"  GROUP BY city
